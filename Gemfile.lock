@@ -41,6 +41,7 @@ GEM
       rails (~> 4.0)
     erubis (2.7.0)
     execjs (2.5.2)
+    gmaps4rails (2.0.3)
     hightop (0.1.1)
       activerecord
     hike (1.2.3)
@@ -118,6 +119,7 @@ DEPENDENCIES
   chartkick
   coffee-rails (~> 4.0.0)
   dateslices
+  gmaps4rails
   hightop
   jbuilder (~> 1.2)
   jquery-rails

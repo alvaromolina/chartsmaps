@@ -4,7 +4,12 @@ class JsonDataController < ApplicationController
   # GET /json_data
   # GET /json_data.json
   def index
+
     @json_data = JsonDatum.all
+    @hash = Gmaps4rails.build_markers(@json_data) do |json_data, marker|
+      marker.lat json_data.long
+      marker.lng json_data.lat
+    end
   end
 
   # GET /json_data/1
