@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @json_datum.value %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @json_datum.lat %>
+</p>
+
+<p>
+  <strong>Long:</strong>
+  <%= @json_datum.long %>
+</p>
+
+<%= link_to 'Edit', edit_json_datum_path(@json_datum) %> |
+<%= link_to 'Back', json_data_path %>

@@ -1,0 +1,33 @@
+<h1>Listing json_data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Lat</th>
+      <th>Long</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @json_data.each do |json_datum| %>
+      <tr>
+        <td><%= json_datum.value %></td>
+        <td><%= json_datum.lat %></td>
+        <td><%= json_datum.long %></td>
+        <td><%= link_to 'Show', json_datum %></td>
+        <td><%= link_to 'Edit', edit_json_datum_path(json_datum) %></td>
+        <td><%= link_to 'Destroy', json_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= line_chart JsonDatum.group_by_minute(:created_at, "sum", "value") %>
+
+<br>
+
+<%= link_to 'New Json datum', new_json_datum_path %>
